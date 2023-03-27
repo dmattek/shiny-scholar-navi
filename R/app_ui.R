@@ -10,7 +10,12 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # Your application UI logic
     fluidPage(
-      h1("scholarApp")
+      navbarPage(collapsible = T,
+                 id = 'navbarid',
+                 title = "scholar navi",
+                 mod_Researcher_ui('mod_researcher_1', 'Researcher', navid = 1),
+                 mod_Collection_ui('mod_collection_1', 'Collection', navid = 2)
+      )
     )
   )
 }

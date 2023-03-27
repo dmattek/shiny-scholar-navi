@@ -20,11 +20,11 @@
 ##
 golem::fill_desc(
   pkg_name = "scholarApp", # The Name of the package containing the App
-  pkg_title = "PKG_TITLE", # The Title of the package containing the App
-  pkg_description = "PKG_DESC.", # The Description of the package containing the App
-  author_first_name = "AUTHOR_FIRST", # Your First Name
-  author_last_name = "AUTHOR_LAST", # Your Last Name
-  author_email = "AUTHOR@MAIL.COM", # Your Email
+  pkg_title = "Google Scholar Viewer", # The Title of the package containing the App
+  pkg_description = "Visualisation of Google Scholar data.", # The Description of the package containing the App
+  author_first_name = "Maciej", # Your First Name
+  author_last_name = "Dobrzynski", # Your Last Name
+  author_email = "info@macdobry.net@", # Your Email
   repo_url = NULL # The URL of the GitHub Repo (optional)
 )
 

@@ -1,13 +1,31 @@
 Package: scholarApp
 Title: Google Scholar Viewer
 Version: 0.0.0.9000
-Authors@R: person('Maciej', 'Dobrzynski', email = 'info@macdobry.net@', role = c('cre', 'aut'))
+Authors@R: 
+    person("Maciej", "Dobrzynski", , "info@macdobry.net@", role = c("cre", "aut"))
 Description: Visualisation of Google Scholar data.
 License: MIT + file LICENSE
 Imports: 
+    attempt,
     config (>= 0.3.1),
+    data.table,
+    DT,
+    ggplot2,
+    ggthemes,
+    glue,
     golem (>= 0.3.2),
-    shiny (>= 1.7.1)
+    htmltools,
+    magrittr,
+    pkgload,
+    plotly,
+    scholar,
+    shiny (>= 1.7.1),
+    stringr
+Suggests: 
+    spelling,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
 Encoding: UTF-8
+Language: en-US
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
