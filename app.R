@@ -4,4 +4,4 @@
 
 pkgload::load_all(export_all = FALSE,helpers = FALSE,attach_testthat = FALSE)
 options( "golem.app.prod" = TRUE)
-scholarApp::run_app() # add parameters here (if any)
+scholarNaviApp::run_app() # add parameters here (if any)
