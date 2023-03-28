@@ -14,7 +14,8 @@ app_ui <- function(request) {
                  id = 'navbarid',
                  title = "scholar navi",
                  mod_Researcher_ui('mod_researcher_1', 'Researcher', navid = 1),
-                 mod_Collection_ui('mod_collection_1', 'Collection', navid = 2)
+                 mod_Collection_ui('mod_collection_1', 'Collection', navid = 2),
+                 mod_Comparison_ui('mod_comparison_1', 'Comparison', navid = 3),
       )
     )
   )

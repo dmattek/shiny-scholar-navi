@@ -25,7 +25,7 @@ mod_Researcher_ui <- function(id, label, navid){
                            width = "50%"),
                  actionButton(inputId = ns('butGSurlSubmit'),
                               label = 'Submit'),
-                 br()
+                 br(), br()
                ),
                fluidRow(
                  tabsetPanel(
@@ -51,6 +51,18 @@ mod_Researcher_ui <- function(id, label, navid){
                                           selected = 5),
                               plotly::plotlyOutput(ns('plotTopNcitHist'))
                             )
+                   ),
+                   tabPanel('Coauthors',
+                            br(),
+                            fluidRow(
+                              selectInput(ns('siNcoauth'),
+                                          label = 'Number of coauthors:',
+                                          choices = list('2' = 2,
+                                                         '5' = 5,
+                                                         '10' = 10),
+                                          selected = 5),
+                              plotOutput(ns('plotCoauth'))
+                            )
                    )
                  )
                )
@@ -74,7 +86,7 @@ mod_Researcher_server <- function(id){
       message("mod_researcher_server ")
     })
 
-    # Process the URL from th einput text box
+    # Process the URL from the input text box
     rfProcessURL <- function() {
       cat('mod_Researcher_server:rfProcessURL\n')
 
@@ -115,10 +127,11 @@ mod_Researcher_server <- function(id){
                            type = 'scatter',
                            mode = 'lines+markers') %>%
         plotly::layout(title = sprintf("Citations of %s", locName),
-               xaxis = list(title = "Year"),
-               yaxis = list (title = "Citations"))
+                       xaxis = list(title = "Year"),
+                       yaxis = list (title = "Citations"))
       p1
     })
+
 
     # Plot citation history of top N papers for the researcher ID
     output$plotTopNcitHist <- plotly::renderPlotly({
@@ -151,6 +164,28 @@ mod_Researcher_server <- function(id){
                        xaxis = list(title = "Years from publication"),
                        yaxis = list (title = "Cumulated citations"))
 
+      p1
+    })
+
+    # Plot citations for researcher ID
+    output$plotCoauth <- renderPlot({
+      cat("mod_Researcher_server:plotCoauth\n")
+
+      # Obtain researcher ID from the URL
+      locResID <- rfProcessURL()
+
+      shiny::validate(
+        shiny::need(!locResID == '',
+                    'Cannot plot citation trend. Provide researcher ID.')
+      )
+
+      # Get coauthors
+      locCoauth <- scholar::get_coauthors(id = locResID,
+                                          n_coauthors = as.numeric(input$siNcoauth),
+                                          n_deep = 1)
+
+
+      p1 = scholar::plot_coauthors(network = locCoauth, size_labels = 5)
       p1
     })
   })
