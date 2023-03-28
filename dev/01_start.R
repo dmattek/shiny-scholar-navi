@@ -19,12 +19,12 @@
 ## to change the name in the app_sys() function in app_config.R /!\
 ##
 golem::fill_desc(
-  pkg_name = "scholarApp", # The Name of the package containing the App
-  pkg_title = "Google Scholar Viewer", # The Title of the package containing the App
-  pkg_description = "Visualisation of Google Scholar data.", # The Description of the package containing the App
+  pkg_name = "scholarNaviApp", # The Name of the package containing the App
+  pkg_title = "Google Scholar Navi App", # The Title of the package containing the App
+  pkg_description = "Browse and visualise Google Scholar data.", # The Description of the package containing the App
   author_first_name = "Maciej", # Your First Name
   author_last_name = "Dobrzynski", # Your Last Name
-  author_email = "info@macdobry.net@", # Your Email
+  author_email = "XXX@XXX.XXX", # Your Email
   repo_url = NULL # The URL of the GitHub Repo (optional)
 )
 

@@ -1,9 +1,8 @@
-Package: scholarApp
-Title: Google Scholar Viewer
+Package: scholarNaviApp
+Title: Google Scholar Navi App
 Version: 0.0.0.9000
-Authors@R: 
-    person("Maciej", "Dobrzynski", , "info@macdobry.net@", role = c("cre", "aut"))
-Description: Visualisation of Google Scholar data.
+Authors@R: person('Maciej', 'Dobrzynski', email = 'XXX@XXX.XXX', role = c('cre', 'aut'))
+Description: Browse and visualise Google Scholar data.
 License: MIT + file LICENSE
 Imports: 
     attempt,
